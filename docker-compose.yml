@@ -1,0 +1,12 @@
+version: '2.1'
+
+services:
+  users-service:
+    container_name: users-service
+    build: .
+    volumes:
+      - '.:/usr/src/app'
+    ports:
+      - 5001:5000 # 5000 is the port inside the container (host:container)
+    environment:
+      - APP_SETTINGS=project.config.DevelopmentConfig
